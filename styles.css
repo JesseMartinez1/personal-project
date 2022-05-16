@@ -1,24 +1,16 @@
-:root {
-  --blue: #2B80FF;
-  --white: #ffffff;
-  --black: 222222;
-  --lightgrey: #f5f5f5;
-  --darkgrey: #b2bec3;
-}
-
 * {
-    font-family: 'politetyperegular';
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'politetyperegular';
-    src: url('./webfontkit-20220331-140816/politetype-regular-webfont.woff2') format('woff2'),
-        url('./webfontkit-20220331-140816/politetype-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+:root {
+    --blue: #0073ff;
+    --white: #fff;
+    --black: #212427;
+    --lightgrey: #f7f7f7;
+    --darkgrey: #ccc;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -35,7 +27,6 @@ body {
 header {
     overflow: hidden;
     padding: 0px 10px;
-    background-color: var(--white);
     display: flex;
     justify-content: space-between;
     max-width: 100%;
@@ -60,7 +51,8 @@ ul {
 }
 
 .gg-profile {
-    color: #2B80FF;
+    color: var(--blue);
+    margin-left: 30px;
 }
 
 .button {
@@ -189,14 +181,14 @@ ul {
     display: block;
     text-align: right;
     font-size: 15px;
-    color: #1a79ca;
+    color: var(--blue);
     text-decoration: none;
     font-weight: 600;
 } 
 
 /* MAIN: HOME */
 
-.search-section {
+.home-container-main {
     background-color: var(--blue);
     color: var(--white);
     display: flex;
@@ -204,64 +196,190 @@ ul {
     justify-content: center;
     align-items: center;
     padding: 10%;
-    height: 40rem; 
-/* do i use rem for anything other than text? */
+    height: 100vh;
 }
 
-#search-input {
-    color: #222222;
+.title {
+    /* overflow: hidden; */
+    height: auto;
 }
 
-.search-section h1 {
+h1 {
     font-size: 5rem;
-    text-align: center;
-    margin-bottom: 50px;
+    color: #fff;
+    margin-bottom: 15px;
+    /* transform: translateY(100px);
+    animation: slideUp .8s ease forwards .8s; */
 }
 
-.search-section input {
-    background-color: var(--white);
-    width: 750px;
-    color: var(--black);
-    font-size: 1rem;
-    border-radius: 50px;
-    padding: 25px;
+.par {
+    height: auto;
+    /* overflow: hidden; */
+}
+
+p {
+    line-height: 28px;
+    /* transform: translateY(300px);
+    animation: slideUp .8s ease-in-out forwards .8s; */
+    font-size: 1.5rem;
+}
+
+#location {
+    background: var(--white);
+    /* transform: translateY(300px);
+    animation: slideUp .8s ease-in-out forwards .8s; */
+    width: 850px;
+    height: 20px;
+    padding: 35px;
     border: none;
+    border-radius: 50px;
+    font-size: large;
 }
 
 .home-container {
     background-color: var(--white);
     text-align: center;
-    margin: 100px 100px;    
+    margin: 100px 100px;  
 }
 
 
 /* MAIN: FEATURES */
+
+.additional-info h1 {
+    font-weight: 300;
+    /* font-size: larger; */
+    color: var(--black);
+}
 
 #features {
     display: flex;
 }
 
 .feature-cards {
-    background-color: var(--blue);
-    color: var(--white);
+    /* background-color: var(--blue); */
+    color: var(--black);
     width: 450px;
     height: 500px;
-    margin: 3% 3% 3% 3%;
-    border-radius: 10px;
-    padding: 1%;
-    /* box-shadow: 0 8px 24px 0 var(--darkgrey); */
 }
 
+.feature-cards #like-illustration {
+    width: 400px;
+}
 
-/* MAIN: ABOUT */
+.feature-cards #filters-illustration {
+    width: 400px;
+}
+
+/* ---------- Index: About Section ---------- */
+
+.home-container h1 {
+    font-weight: 300;
+    /* font-size: larger; */
+    color: var(--black);
+}
 
 .home-container p {
-    margin: 35px;
     font-size: 1.5rem;
 }
 
+#about-container {
+}
 
-/* MAIN: REVIEW */
+.section-heading {
+    font-size: 1rem;
+}
+
+#stats-container {
+    display: flex;
+    margin: 100px 0px;
+}
+
+.stats {
+    margin: 0px 30px;
+    background: var(--blue);
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.stats h1 {
+    font-weight: bolder;
+    color: var(--white);
+}
+
+.stats p {
+    color: var(--white);
+}
+
+#citation p {
+    font-size: 1rem;
+}
+
+/* ---------- Index: Contact Section ---------- */
+
+.contact-section {
+    display: flex;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.contact-section #contact-container-left {
+    width: 50%;
+    text-align: left;
+}
+
+.contact-section #contact-container-right {
+    width: 50%;
+}
+
+.contact-section #contact-container-right form {
+    text-align: left;
+    padding: 0px 50px 0px 50px;
+}
+
+.contact-section #contact-container-right form input {
+    width: 100%;
+    padding: 15px 5px;
+    border: none;
+    border-bottom: 1px solid var(--darkgrey);
+    background-color: var(--lightgrey);
+    margin-bottom: 20px;
+}
+
+.contact-section #contact-container-right form textarea {
+    width: 100%;
+    padding: 15px 5px;
+    border: none;
+    border-bottom: 1px solid var(--darkgrey);
+    background-color: var(--lightgrey);
+    margin-bottom: 20px;
+}
+
+.contact-section #contact-container-right form textarea::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.contact-section #contact-container-right form button {
+    width: 200px;
+    height: 60px;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 50px;
+    color: var(--white);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ---------- Index: Leaver Review Section ---------- */
 
 .review-card {
     background-color: var(--blue);
@@ -274,8 +392,10 @@ ul {
 }
 
 .review-card button {
+    width: 200px;
+    height: 60px;
     background-color: var(--white);
-    border: 3px solid var(--blue);
+    border: none;
     border-radius: 50px;
     color: var(--blue);
     padding: 15px 32px;
@@ -305,7 +425,7 @@ ul {
 footer {
     background-color: var(--lightgrey);
     color: var(--black);
-    height: 350px;
+    height: auto;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -328,13 +448,32 @@ footer img {
     margin-top: 20px;
 }
 
-#contact-info {
+#footer-contact-info {
     margin-left: 100px;
 }
 
-#copyright {
-    text-align: center;
-    margin-top: 80px;
+#footer-contact-info ul {
+    display: flex;
+    flex-direction: column;
+}
+
+footer hr {
+    background-color: var(--black);
+    margin-top: 150px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+#footer-secondary-info {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+#footer-secondary-info p {
+    font-size: 1rem;
 }
 
 /* --------------- Map Page --------------- */
@@ -396,7 +535,7 @@ footer img {
 .map-placeholder {
     background-color: var(--blue);
     padding: 60px;
-    width: 50%;
+    width: 70%;
     height: 800px;
     border-radius: 0px;
     margin: 0px 0px 0px 0px;
@@ -405,10 +544,10 @@ footer img {
 .img-placeholder {
     background-color: var(--blue);
     padding: 60px;
-    width: 350px;
+    width: 450px;
     height: 200px;
-    border-radius: 20px;
-    margin: 50px 25px;
+    border-radius: 10px;
+    margin: 40px 20px 20px 20px;
 }
 
 .card {
@@ -418,47 +557,9 @@ footer img {
 }
 
 .card-details {
-    margin: 30px 0px;
+    margin: 40px 0px;
     color: var(--black);
 }
-
-/* --------------- Contact Page --------------- */
-
-/* #contact-page {
-    display: flex;
-}
-
-form {
-    width: 50%;
-    height: fit-content;
-    margin: 50px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-copy {
-    background-color: var(--white);
-    color: var(--blue);
-    width: 50%;
-    padding: 100px 50px;
-    font-size: 2rem;
-}
-
-form input {
-    border: none;
-    border-bottom: solid 1px var(--darkgrey);
-    height: 50px;
-}
-
-form button {
-    border: none;
-    border-radius: 20px;
-    padding: 2%;
-    background-color: var(--blue);
-    color: var(--white);
-    width: 200px;
-}  */
 
 /* --------------- 404 Page --------------- */
 
@@ -485,4 +586,79 @@ form button {
     font-size: 1.5rem;
     text-align: center;
     margin: 50px 100px;
+} */
+
+
+/* .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.center button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+.popup .form h2 {
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+.popup .form .form-element {
+    margin: 15px 0px;
+}
+.popup .form .form-element label {
+    font-size: 14px;
+    color: #222;
+}
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+.popup .form .form-element input[type="checkbox"] {
+    margin-right: 5px;
+}
+.popup .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.popup .form .form-element a {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #1a79ca;
+    text-decoration: none;
+    font-weight: 600;
 } */

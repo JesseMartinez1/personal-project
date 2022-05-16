@@ -30,13 +30,13 @@
     </header>
 
     <main>
-        <!-- <div class="center">
-            <button id="show.login">Login</button>
+        <div class="center">
+            <button id="show-login">Login</button>
         </div>
         <div class="popup">
             <div class="close-btn">&times;</div>
             <div class="form">
-                <h2>Log in</h2>
+                <h2>Log In</h2>
                 <div class="form-element">
                     <label for="email">Email</label>
                     <input type="text" id="email" placeholder="Enter email">
@@ -50,37 +50,53 @@
                     <label for="remember-me">Remember me</label>
                 </div>
                 <div class="form-element">
-                    <button>Sign In</button>
+                   <button>Sign in</button> 
                 </div>
                 <div class="form-element">
                     <a href="#">Forgot password?</a>
                 </div>
             </div>
-        </div> -->
+        </div>
 
-        <div class="search-section">
-            <h1>A brief and engaging headline explaining the application will go here</h1>
-            <!-- REMEMBER TO ADD A HERO IMG -->
-            <!-- <img src="hero-img"> -->
-            <form action="#">
-                <input id="search-input" type="text" placeholder="Enter an address, neighborhood, city, or ZIP code" name="search">
-                <button type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
-            </form>
-            <!-- <img src="Images/pexels-cottonbro-4114710.jpg" id="hero"> -->
+
+        <div class='home-container-main'>
+            <div class="container-content">
+                <div class="container_content_inner">
+                    <div class="title">
+                        <h1>Let's find a restroom</h1>
+                    </div>
+                    <div class="par">
+                        <p>
+                            Locate public restrooms that fit your unique needs quickly and safely.
+                        </p>
+                    </div>
+                    <form class="location-search" action="#">
+                        <input type="text" id="location" name="location"
+                            placeholder="Enter an address, neighborhood, city, or zip code">
+                        <!-- <button type="submit"><i class="gg-search"></i></button> -->
+                    </form>
+                    <!-- <div class="btns">
+                            <button class='btns_more'> See more </button>
+                        </div> -->
+                </div>
+            </div>
         </div>
 
         <div class="home-container">
             <div class="additional-info">
-                <h5>OUR FEATURES</h5>
+                <h5 class="section-heading">WHAT WE OFFER</h5>
                 <h1>Be prepared when nature calls.</h1>
                 <div id="features">
                     <div class="feature-cards">
+                        <img id="filters-illustration" src="Images/filters-illustration.png" alt="illustration of person setting search filters">
                         <p>Easily locate restrooms with specific features with our filter and sort tools</p>
                     </div>
                     <div class="feature-cards">
+                        <img id="like-illustration" src="Images/rating _ survey, website, webpage, browser, yes, no, confirm, cancel, woman, people 1.png" alt="illustration of person with hearts around them liking a search result in a web browser">
                         <p>Save your favorite restrooms for fast access</p>
                     </div>
                     <div class="feature-cards">
+                        <img id="filters-illustration" src="Images/filters-illustration.png" alt="illustration of person setting search filters">
                         <p>Get real reviews from real people with crowdsourced info</p>
                     </div> 
                 </div>
@@ -90,9 +106,47 @@
             </div> -->
         </div>
         <div id="about-container" class="home-container">
-            <h5>WHAT WE'RE ABOUT</h5>
+            <h5 class="section-heading">WHAT WE'RE ABOUT</h5>
             <h1>Everyone has the right to go.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sometimes the most difficult part of someone's day is something most people don't think twice about. Gotta Go was created to make the lives of transgender and gender non-confrming individuals safer and easier by providing critical information on public restrooms.</p>
+            <div id="stats-container">
+                <div class="stats">
+                    <h1>60%</h1>
+                    <p>of transgender Americans have avoided using public restrooms for fear of harrassment and assault</p>
+                </div>
+                <div class="stats">
+                    <h1>12%</h1>
+                    <p>of transgender people were verbally harassed in public restrooms in the year prior to this study</p>
+                </div>
+                <div class="stats">
+                    <h1>32%</h1>
+                    <p>of transgender people reported limiting how much they ate or drank to avoid having to use a public restroom</p>
+                </div>
+            </div>
+            <div id="citation">
+                <p><span style="font-weight:bold">Source:</span> Reuters, 2016</p>
+            </div>
+            <div class="contact-section">
+                <div id="contact-container-left">
+                    <div id="contact-heading">
+                        <h1>Get in Touch</h1>
+                    </div>
+                    <div id="contact-paragraph">
+                        <p>Have a question, suggestion, or anything else you'd like to share? Shoot us a message.</p>
+                    </div>
+                </div>
+                <div id="contact-container-right">
+                    <form>
+                        <label for="name">Your name</label><br>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required="name"><br>
+                        <label for="email">Email Address</label><br>
+                        <input type="text" id="email" name="email" placeholder="Email Address"><br>
+                        <label for="message">Message</label><br>
+                        <textarea type="text" id="message" name="message" placeholder="What's on your mind?" rows="5"></textarea><br>
+                        <button id="submit-button" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="review-card">
             <h1>Wanna talk toilets?</h1>
@@ -103,20 +157,42 @@
     </main>
 
     <footer>
-        <div class="footer-columns">
-            <div>
-                <img src="Images/gg-logo.png">
-                <p id="footer-blurb">Gotta Go is resource for locating and navigating public restrooms quickly and safely.</p>
-            </div>
-            <div id="contact-info">
-                <h5>Contact</h5>
-                <p>Email: hey@gottago.com</p>
-                <a href="contact">Contact Us</a>
+        <div id="footer-primary-info">
+            <div class="footer-columns">
+                <div id="footer-logo-descript">
+                    <img src="Images/gg-logo.png">
+                    <p id="footer-blurb">Gotta Go is resource for locating and navigating public restrooms quickly and safely.</p>
+                </div>
+                <div id="footer-contact-info">
+                    <ul>
+                        <li>
+                            <a href="contact">About</a>
+                        </li>
+                        <li>
+                            <a href="contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="contact">Contact</a>
+                        </li>
+                        <li>
+                            <a href="contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <hr>
+        <div id="footer-secondary-info">
             <div>
-                <p id="copyright">© 2022 Gotta Go</p>
-            </div>    
+                <p id="copyright">© 2022 Gotta Go |</p>
+            </div>
+            <div>
+                <a href="#">Privacy Policy |</a>
+            </div>
+            <div>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>    
     </footer>
 
 </body>
