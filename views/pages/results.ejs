@@ -8,6 +8,20 @@
     <link href='https://css.gg/profile.css' rel='stylesheet'>
     <script defer src="./scripts.js"></script>
     <script src="https://kit.fontawesome.com/32a40a29e2.js" crossorigin="anonymous"></script>
+
+    <!-- ---maps--- -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css"
+        type="text/css">
+    <style>
+        .map {
+            height: 800px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+    <!-- ---maps--- -->
+
+
     <title id="search-results-go-here"></title>
 </head>
 <body>
@@ -26,7 +40,6 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <div class="hl-1"></div>
         <div id="search-options">
@@ -42,9 +55,23 @@
         </div>
         <div class="hl-2"></div>
         <div class="content-boxes">
-            <div class="map-placeholder">
-                <!-- <img src=""> -->
-            </div>
+            <!-- ---map--- -->
+            <div id="map" class="map"></div>
+            <script type="text/javascript">
+                var map = new ol.Map({
+                    target: 'map',
+                    layers: [
+                        new ol.layer.Tile({
+                            source: new ol.source.OSM()
+                        })
+                    ],
+                    view: new ol.View({
+                        center: ol.proj.fromLonLat([-71.05, 42.36]),
+                        zoom: 15
+                    })
+                });
+            </script>
+            <!-- ---map--- -->
             <div class="result-cards">
                 <div class="card-list">
                     <div class="card">
@@ -72,22 +99,5 @@
         
     </main>
 
-    <footer>
-        <div class="footer-columns">
-            <div>
-                <img src="Images/gg-logo.png">
-                <p id="footer-blurb">Gotta Go is resource for locating and navigating public restrooms quickly and safely.
-                </p>
-            </div>
-            <div id="contact-info">
-                <h5>Contact</h5>
-                <p>Email: hey@gottago.com</p>
-                <a href="contact">Contact Us</a>
-            </div>
-        </div>
-        <div>
-            <p id="copyright">© 2022 Gotta Go</p>
-        </div>
-    </footer>
-</body>
-</html>
+<%- include('../partials/footer') -%>
+    
