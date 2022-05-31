@@ -2,15 +2,85 @@
 
 <%- include('../partials/navbar') -%>
 
-<section class="main-content" id="admin-content">
+<section class="admin-page">
+    <h3>Welcome <%= signedIn ? name : '' %>!</h3>
+    <div class="admin-content-layout">
+        
+        <div class="admin-main-container-1">
+            <div class="admin-profile-tag">
+                <h3>Admin</h3>
+            </div>
+            <img src="/Images/pexels-cottonbro-4114710.jpg" alt="User profile photo">
+            <div class="admin-profile-user-name">
+                <h2>
+                    <%= signedIn ? name : '' %>
+                </h2>
+                <img src="/Images/verified_icon.png" alt="Verified icon">
+            </div>
+            <hr>
+            <div class="bio-details">
+                <table>
+                    <td></td>
 
-    <h1 class="heading"> <span>admin - books</span> </h1>
-
-    <div class="main-content-layout">
-
-
+                </table>
+                <p>User since 2021</p>
+                <p>Number of ratings:</p>
+                <p><span>Location:</span></p>
+                <p>Boston, MA</p>
+            </div>
+        </div>
+        <div class="admin-main-container-2">
+            <div class="admin-headers">
+                <h4>REVIEWS</h4>
+                <h3>Awaiting Approval</h3>
+                <hr>
+                <div class="restroom-cards">
+                    <% for (restroom of restroomArray) { %>
+                        <a href="/admin/<%= restroom._id %>" class="card">
+                            <div class="">
+                                <div id="reviewer-name-email">
+                                    <h5 id="reviewer-name">
+                                        <%= restroom.username %>
+                                    </h5>
+                                    <p class="email">
+                                        <%= restroom.email %>
+                                    </p>
+                                </div>
+                                <p class="headline">
+                                    <%= restroom.headline %>
+                                </p><br>
+                                <p class="written-review">
+                                    <%= restroom.commentText %>
+                                </p><br>
+                                <img src="<%= restroom.img %>" alt="">
+                            </div>
+                            <div class="admin-review-btns">
+                                <button>Approve</button>
+                                <button>Archive</button>
+                                <form action="/admin/<%= restroom._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </a>
+                </div>
+                <% } %>
+            </div>
+            <!-- <div <div class="admin-headers">
+                <h3>All Reviews</h3>
+            </div>
+            
+            <hr> -->
+        </div>
+        
     </div>
 
 </section
 
 <%- include('../partials/footer') -%>
+
+
+
+
+    
+
+</section>

@@ -2,33 +2,51 @@
 <footer>
     <div id="footer-primary-info">
         <div class="footer-columns">
-            <div id="footer-logo-descript">
-                <img src="Images/gg-logo.png">
+            <div id="footer-column-1">
+                <a href="/" ><img src="Images/gg_logo_black.png"></a>
                 <p id="footer-blurb">Gotta Go is resource for locating and<br> navigating public restrooms quickly and
                     safely.</p>
+                <div id="social-icons">
+                    <a href=#><img src="/Images/facebook_logo.png" alt="Facebook logo"></a>
+                    <a href=#><img src="/Images/instagram_logo.png" alt="Instagram logo"></a>
+                    <a href=#><img src="/Images/twitter_logo.png" alt="Twitter logo"></a>
+                </div>
             </div>
-            <div id="footer-contact-info">
+            <div id="footer-column-2">
+                <div class="footer-column-headers">
+                    <h3>COMMUNITY</h3>
+                </div>
                 <ul>
                     <li>
-                        <a href="contact">About</a>
+                        <a href="../pages/index.ejs">About</a>
                     </li>
                     <li>
-                        <a href="contact">Contact</a>
+                        <a href="contact">Get Involved</a>
                     </li>
                     <li>
-                        <a href="contact">Contact</a>
+                        <a href="contact">Submit an issue</a>
                     </li>
                     <li>
                         <a href="contact">Contact</a>
                     </li>
                 </ul>
             </div>
+            <div id="footer-column-3">
+                <div class="footer-column-headers">
+                    <h3>Community</h3>
+                </div>
+            </div>
+            <div id="footer-column-4">
+                <div class="footer-column-headers">
+                    <h3>RESOURCES</h3>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
     <div id="footer-secondary-info">
         <div>
-            <p id="copyright">© 2022 Gotta Go |</p>
+            <p id="copyright">© <%= copyrightYear %> Gotta Go |</p>
         </div>
         <div>
             <a href="#">Privacy Policy |</a>

@@ -1,0 +1,38 @@
+<%- include('../partials/head') -%>
+
+<%- include('../partials/navbar') -%>
+
+<!-- user profile section starts  -->
+<section class="profile-page">
+    <h3>Welcome <%= signedIn ? name : '' %>!</h3>
+    <div class="profile-page-content">
+        <div class="profile-main-container-1">
+            <div class="profile-admin-tag">
+                <h3>Admin</h3>
+            </div>
+            <img src="/Images/pexels-cottonbro-4114710.jpg" alt="User profile photo">
+            <div class="profile-page-user-name">
+                <h2>
+                    <%= signedIn ? name : '' %>
+                </h2>
+                <img src="/Images/verified_icon.png" alt="Verified icon">
+            </div>
+            <hr>
+            <div class="bio-details">
+                <p><span>City:</span></p><p>Boston, MA</p>
+                <p><span>City:</span></p>
+                <p>Boston, MA</p>
+                <p><span>City:</span></p>
+                <p>Boston, MA</p>
+            </div>
+        </div>
+        <div class="profile-main-container-2">
+            <h3>Your Favorites</h3>
+            <hr>
+            <h3>Your Reviews</h3>
+        </div>
+    </div>
+    
+</section>
+
+<%- include('../partials/footer') -%>

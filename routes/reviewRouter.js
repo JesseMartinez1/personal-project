@@ -4,6 +4,7 @@ const reviewController = require('../controllers/reviewController');
 const router = express.Router();
 
 router.route('/')
-    .get(reviewController.review);
+    .get(reviewController.review)
+    // .post(reviewController.create_restroom)
 
 module.exports = router;

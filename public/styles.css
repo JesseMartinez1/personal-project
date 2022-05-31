@@ -26,7 +26,6 @@ body {
 
 header {
     overflow: hidden;
-    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
     max-width: 100%;
@@ -37,6 +36,7 @@ header {
 .logo img {
     width: 125px;
 }
+
 /* ------ NAV BAR ------ */
 header a {
     text-decoration: none;
@@ -87,6 +87,19 @@ ul {
     color: var(--blue);
     margin-left: 20px;
 }
+
+/* ------ white navbar ------- */
+
+
+
+
+
+
+
+
+
+
+
 
 /* ------ LOGIN MODAL ------ */
 
@@ -236,7 +249,7 @@ p {
 .home-container {
     background-color: var(--white);
     text-align: center;
-    margin: 100px 100px;  
+    margin: 100px;
 }
 
 
@@ -250,25 +263,29 @@ p {
 
 #features {
     display: flex;
+    justify-content: center;
 }
 
 .feature-cards {
-    /* background-color: var(--blue); */
     color: var(--black);
     width: 450px;
     height: 500px;
+    margin: 30px;
 }
 
 .feature-cards #like-illustration {
     width: 400px;
+    margin: 25px;
 }
 
 .feature-cards #filters-illustration {
     width: 400px;
+    margin: 25px;
 }
 
 .feature-cards #crowdsource-illustration {
     width: 400px;
+    margin: 25px;
 }
 /* ---------- Index: About Section ---------- */
 
@@ -283,9 +300,10 @@ p {
 }
 
 #about-container {
-    max-width: 100vw; 
     background-color: var(--lightgrey);
     padding: 100px;
+    width: 100%;
+    margin: 0px 0px;
 }
 
 .section-heading {
@@ -328,10 +346,9 @@ p {
 
 .contact-section {
     display: flex;
-    width: 100%;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: 100px;
+    margin: 100px;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-section #contact-container-left #contact-heading h1 {
@@ -341,6 +358,7 @@ p {
 
 .contact-section #contact-container-left {
     text-align: left;
+    width: 35%;
 }
 
 .contact-section #contact-container-right {
@@ -374,6 +392,11 @@ p {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--black);
+}
+
 .contact-section #contact-container-right form button {
     width: 150px;
     height: 60px;
@@ -389,7 +412,7 @@ p {
     cursor: pointer;
 }
 
-/* ---------- Index: Leaver Review Section ---------- */
+/* ---------- Index: Leave Review Section ---------- */
 
 .review-card {
     background-color: var(--blue);
@@ -447,29 +470,53 @@ footer {
     line-height: 1.5;
 }
 
+#footer-column-1 {
+    width: 33%;
+}
+
 footer img {
-    width: 125px;
+    width: 100px;
     margin-bottom: 2px;
 }
 
 #footer-blurb {
     font-size: 1.25rem;
     width: 500px;
+    margin-top: 15px;
+}
+
+#social-icons img {
+    width: 35px;
     margin-top: 20px;
+    margin-right: 10px;
 }
 
-#footer-contact-info {
+.footer-column-headers h3 {
+    font-size: smaller;
+    margin-bottom: 20px;
+}
+
+
+#footer-column-2 {
     margin-left: 100px;
+    margin-right: 70px;
 }
 
-#footer-contact-info ul {
-    display: flex;
-    flex-direction: column;
+#footer-column-2 ul {
+    display: inline-block;
+    text-align: left;
+}
+#footer-column-2 li {
+    margin-bottom: 10px;
+}
+
+#footer-column-3{
+    margin-right: 70px;
 }
 
 footer hr {
     background-color: var(--black);
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 footer a {
@@ -484,6 +531,12 @@ footer a {
 
 #footer-secondary-info p {
     font-size: 1rem;
+    margin-right: 10px;
+}
+
+#footer-secondary-info a {
+    font-size: 1rem;
+    margin-right: 10px;
 }
 
 /* --------------- Map Page --------------- */
@@ -600,13 +653,39 @@ footer a {
 
 /* -----review------ */
 
+
+
+
 #restroom-img-placeholder {
-    background: var(--blue);
-    width: 200px;
-    height: 150px;
+    width: 400px;
+    height: 300px;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
 }
 
+
+
+
 /* -------- review form */
+.review-form h1 {
+    font-weight: 300;
+    /* font-size: larger; */
+    color: var(--black);
+    text-align: center;
+}
+#form-page-par {
+    font-size: larger;
+    color: var(--black);
+    text-align: center;
+} 
+
+.review-form-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
 .feedback {
     width: 100%;
@@ -769,20 +848,221 @@ span.scale-rating label:before {
     z-index: 2;
 }
 
+#add-img-btn {
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 #review-form input[type=submit] {
-    background:var(--blue);
-    color: var(--white);
-    padding: 12px;
+    width: 100px;
+    height: 50px;
+    background-color: var(--blue);
     border: none;
+    border-radius: 30px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 #review-page {
-    border: 5px solid red;
     padding: 50px;
 }
 
-.review-form h1 {
-    font-weight: 300;
-    /* font-size: larger; */
+
+.image-upload>input {
+    display: none;
+}
+
+
+/* ------- */
+#review-form input[type=checkbox] {
+    border: 5px solid red;
+}
+
+/* ------- Admin Page -------- */
+.admin-content-layout h3 {
+    margin: 100px;
+    font-weight: 400;
+}
+
+.admin-headers h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.admin-headers h4 {
+    margin: 50px 0px 0px 70px;
+    font-weight: 400;
+}
+
+.admin-content-layout hr {
+    margin: 0px 70px ;
+    border: .5px solid #ddd;
+}
+
+.card {
+    width: fit-content;
+    margin: 50px 100px 50px 70px;
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;  
+    text-decoration: none;
     color: var(--black);
 }
+
+.card button {
+    width: 100px;
+    background-color: var(--white);
+    color: var(--black);
+    border:2px solid var(--darkgrey);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#reviewer-name-email {
+    margin-bottom: 20px;
+}
+
+#reviewer-name-email p{
+    font-size: 1rem;
+}
+
+.admin-page h3 {
+    margin: 50px 0px 50px 75px;
+    font-weight: 400;
+    width: fit-content;
+}
+
+.admin-content-layout {
+    display: flex;
+}
+
+.admin-main-container-1 {
+    width: 25%;
+    height: fit-content;
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    padding: 50px;
+    margin: 0px 20px 100px 70px;
+    border-radius: 20px;
+}
+
+.admin-profile-tag h3 {
+    width: 80px;
+    height: 40px;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-profile-user-name {
+    display: flex;
+}
+
+.admin-profile-user-name img {
+    width: 15px;
+    height: 15px;
+}
+
+.admin-main-container-1 hr {
+    width: 250px;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--darkgrey);
+    margin: 1em 0;
+    padding: 0;
+}
+
+.admin-main-container-1 img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.bio-details p {
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.admin-main-container-2 {
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    width: 75%;
+    height: 700px;
+    border-radius: 20px;
+    margin-right: 70px;
+    margin-bottom: 100px;
+    overflow: scroll;
+}
+/* ----- user profile page  ----- */
+.profile-page-content{
+    display: flex;
+}
+
+.profile-page h3 {
+    margin: 50px 0px 50px 75px;
+    font-weight: 400;
+    width: fit-content;
+}
+
+.profile-main-container-1 {
+    width: 25%;
+    height: fit-content;
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    padding: 50px;
+    margin: 0px 20px 100px 70px;
+    border-radius: 20px;
+}
+
+.profile-main-container-1 img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-page-user-name h2 {
+
+}
+
+.profile-page-user-name img {
+    width: 15px;
+    height: 15px;
+}
+
+.profile-page-content hr {
+    width: 200px;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--darkgrey);
+    margin: 1em 0;
+    padding: 0;
+}
+
+.profile-main-container-2 {
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    width: 75%;
+    height: 700px;
+    border-radius: 20px;
+    margin-right: 70px;
+    margin-bottom: 100px;
+}
+
