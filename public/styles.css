@@ -6,6 +6,7 @@
 
 :root {
     --blue: #0073ff;
+    --lightblue: #f1f7ff;
     --white: #fff;
     --black: #212427;
     --lightgrey: #f7f7f7;
@@ -499,7 +500,7 @@ footer img {
 
 #footer-column-2 {
     margin-left: 100px;
-    margin-right: 70px;
+    margin-right: 60px;
 }
 
 #footer-column-2 ul {
@@ -510,8 +511,23 @@ footer img {
     margin-bottom: 10px;
 }
 
-#footer-column-3{
-    margin-right: 70px;
+#footer-column-3 {
+    margin-right: 60px;
+
+}
+
+#footer-column-3 li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+#footer-column-4 {
+    margin-right: 60px;
+}
+
+#footer-column-4 li {
+    list-style: none;
+    margin-bottom: 10px;
 }
 
 footer hr {
@@ -882,29 +898,27 @@ span.scale-rating label:before {
 }
 
 /* ------- Admin Page -------- */
-.admin-content-layout h3 {
-    margin: 100px;
+#approval-header {
+    margin: 50px 0px 20px 70px;
     font-weight: 400;
-}
-
-.admin-headers h3 {
+    width: fit-content;
     font-size: 1.5rem;
-    font-weight: 600;
 }
 
 .admin-headers h4 {
+    width: fit-content;
     margin: 50px 0px 0px 70px;
     font-weight: 400;
 }
 
 .admin-content-layout hr {
     margin: 0px 70px ;
-    border: .5px solid #ddd;
+    border: .5px solid var(--darkgrey);
 }
 
 .card {
-    width: fit-content;
-    margin: 50px 100px 50px 70px;
+    width: 920px;
+    margin: 50px 70px 50px 70px;
     box-shadow:
         0 5px 10px rgba(154, 160, 185, 0.05),
         0 15px 40px rgba(166, 173, 201, 0.2);
@@ -914,6 +928,7 @@ span.scale-rating label:before {
     flex-direction: column;  
     text-decoration: none;
     color: var(--black);
+    background-color: var(--white);
 }
 
 .card button {
@@ -926,16 +941,35 @@ span.scale-rating label:before {
     margin-right: 10px;
 }
 
+.card button:hover {
+    width: 100px;
+    background-color: var(--lightgrey);
+    color: var(--black);
+    border: 2px solid var(--darkgrey);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
 #reviewer-name-email {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #reviewer-name-email p{
     font-size: 1rem;
 }
+.rating {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
 
-.admin-page h3 {
-    margin: 50px 0px 50px 75px;
+.written-review {
+    font-size: 1rem;
+    line-height: normal;
+}
+
+#welcome {
+    margin: 50px 0px 10px 75px;
     font-weight: 400;
     width: fit-content;
 }
@@ -953,27 +987,34 @@ span.scale-rating label:before {
     padding: 50px;
     margin: 0px 20px 100px 70px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.bold-type {
+    font-weight: bold;
 }
 
 .admin-profile-tag h3 {
-    width: 80px;
+    width: 100%;
     height: 40px;
     background-color: var(--blue);
     color: var(--white);
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
 
 .admin-profile-user-name {
     display: flex;
-}
-
-.admin-profile-user-name img {
-    width: 15px;
-    height: 15px;
+    align-items: baseline;
 }
 
 .admin-main-container-1 hr {
@@ -990,11 +1031,22 @@ span.scale-rating label:before {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.admin-profile-user-name img {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
 }
 
 .bio-details p {
+    width: 100%;
     color: var(--black);
     font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .admin-main-container-2 {
@@ -1007,7 +1059,13 @@ span.scale-rating label:before {
     margin-right: 70px;
     margin-bottom: 100px;
     overflow: scroll;
+    background-color: var(--lightblue);
 }
+
+.admin-review-btns{
+    display: flex;
+}
+
 /* ----- user profile page  ----- */
 .profile-page-content{
     display: flex;

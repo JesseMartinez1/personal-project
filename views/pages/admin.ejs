@@ -3,7 +3,7 @@
 <%- include('../partials/navbar') -%>
 
 <section class="admin-page">
-    <h3>Welcome <%= signedIn ? name : '' %>!</h3>
+    <h3 id="welcome">Welcome <%= signedIn ? name : '' %>!</h3>
     <div class="admin-content-layout">
         
         <div class="admin-main-container-1">
@@ -14,25 +14,19 @@
             <div class="admin-profile-user-name">
                 <h2>
                     <%= signedIn ? name : '' %>
-                </h2>
-                <img src="/Images/verified_icon.png" alt="Verified icon">
+                </h2><img src="/Images/verified_icon.png" alt="Verified icon">
             </div>
             <hr>
             <div class="bio-details">
-                <table>
-                    <td></td>
-
-                </table>
-                <p>User since 2021</p>
-                <p>Number of ratings:</p>
-                <p><span>Location:</span></p>
-                <p>Boston, MA</p>
+                <p><span class="bold-type">User since: </span>May 2021</p>
+                <p><span class="bold-type">Number of ratings: </span>91</p>
+                <p><span class="bold-type">Location: </span> Boston, MA</p>
             </div>
         </div>
         <div class="admin-main-container-2">
             <div class="admin-headers">
                 <h4>REVIEWS</h4>
-                <h3>Awaiting Approval</h3>
+                <h3 id="approval-header">Awaiting Approval</h3>
                 <hr>
                 <div class="restroom-cards">
                     <% for (restroom of restroomArray) { %>
@@ -40,12 +34,15 @@
                             <div class="">
                                 <div id="reviewer-name-email">
                                     <h5 id="reviewer-name">
-                                        <%= restroom.username %>
+                                        User: <%= restroom.username %>
                                     </h5>
                                     <p class="email">
                                         <%= restroom.email %>
                                     </p>
                                 </div>
+                                <p class="rating">
+                                    Rating: <%= restroom.rating %> out of 5
+                                </p>
                                 <p class="headline">
                                     <%= restroom.headline %>
                                 </p><br>
