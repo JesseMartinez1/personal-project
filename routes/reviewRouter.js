@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.route('/')
     .get(reviewController.review)
-    // .post(reviewController.create_restroom)
+    .post(reviewController.create_restroom_post)
 
 module.exports = router;

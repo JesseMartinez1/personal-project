@@ -22,57 +22,9 @@ const restroomSchema = new Schema({
         required: [true, 'Please enter a headline.'],
         minlength: [2, 'Minimum length for the headline is 2 characters.']
     },
-    // allGender: {
-    //     type: Boolean
-    // },
-    // singleStall: {
-    //     type: Boolean
-    // },
-    // wheelchairAccessibleStall: {
-    //     type: Boolean
-    // },
-    // openToNonCustomers: {
-    //     type: Boolean
-    // },
-    // toilet: {
-    //     type: Boolean
-    // },
-    // urinal: {
-    //     type: Boolean
-    // },
-    // multipleStalls: {
-    //     type: Boolean
-    // },
-    // womensRoom: {
-    //     type: Boolean
-    // },
-    // mensRoom: {
-    //     type: Boolean
-    // },
-    // changingTable: {
-    //     type: Boolean
-    // },
-    // menstrualProducts: {
-    //     type: Boolean
-    // },
-    // automaticDoorOpener: {
-    //     type: Boolean
-    // },
-    // restroomAttendant: {
-    //     type: Boolean
-    // },
-    // floorToCeilingStallWalls: {
-    //     type: Boolean
-    // },
-    // familyRestroom: {
-    //     type: Boolean
-    // },
-    // noAccessKeyRequired: {
-    //     type: Boolean
-    // },
-    // accessibleBagHooksInStall: {
-    //     type: Boolean
-    // },
+    restroomAttributes: {
+        type: Array
+    },
     commentText: {
         type: String,
         required: [true, 'Please enter a written review.'],
@@ -82,6 +34,9 @@ const restroomSchema = new Schema({
     img: {
         data: Buffer,
         contentType: String
+    },
+    isApproved: {
+        type: Boolean
     }
 });
 

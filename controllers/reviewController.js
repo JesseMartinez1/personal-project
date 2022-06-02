@@ -9,35 +9,21 @@ module.exports = {
             signedIn: siteData.signedIn
         });
     },
-    // create_restroom_post: (req, res) => {
-    //     const { name, email, rating, headline, allGender, singleStall, wheelchairAccessibleStall, openToNonCustomers, toilet, urinal, multipleStalls, womensRoom, mensRoom, changingTable, menstrualProducts, automaticDoorOpener, restroomAttendant, floorToCeilingStallWalls, familyRestroom, noAccessKeyRequired, accessibleBagHooksInStall, commentText, img } = req.body;
-    //     const newRestroom = new Restroom({
-    //         name: name,
-    //         email: email,
-    //         rating: rating,
-    //         headline: headline,
-    //         allGender: allGender,
-    //         singleStall: singleStall,
-    //         wheelchairAccessibleStall: wheelchairAccessibleStall,
-    //         openToNonCustomers: openToNonCustomers,
-    //         toilet: toilet,
-    //         urinal: urinal,
-    //         multipleStalls: multipleStalls,
-    //         womensRoom: womensRoom,
-    //         mensRoom: mensRoom,
-    //         changingTable: changingTable,
-    //         menstrualProducts: menstrualProducts,
-    //         automaticDoorOpener: automaticDoorOpener,
-    //         restroomAttendant: restroomAttendant,
-    //         floorToCeilingStallWalls: floorToCeilingStallWalls,
-    //         familyRestroom: familyRestroom,
-    //         noAccessKeyRequired: noAccessKeyRequired,
-    //         accessibleBagHooksInStall: accessibleBagHooksInStall,
-    //         commentText: commentText,
-    //         img: img
-    //     });
-    //     newRestroom.save();
-    //     res.redirect("/results");
+    create_restroom_post: (req, res) => {
+        const { username, email, rating, headline, restroomAttributes, commentText, img } = req.body;
+        console.log(req.body)
+        const newRestroom = new Restroom({
+            username: username,
+            email: email,
+            rating: rating,
+            headline: headline,
+            restroomAttributes: restroomAttributes,
+            commentText: commentText,
+            img: img,
+            isApproved: false
+        }); 
+        newRestroom.save();
+        res.redirect("/results");
     //     // should i redirect to a thank you page ?
     // },
     // update_restroom_put: (req, res) => {
@@ -74,5 +60,5 @@ module.exports = {
     //             res.redirect('/admin');
     //         }
     //     });
-    // }
+    }
 }    
