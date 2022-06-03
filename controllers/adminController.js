@@ -13,62 +13,31 @@ module.exports = {
                     signedIn: siteData.signedIn,
                     restroomArray: allRestrooms
                 });
-                // unapproved_restrooms: (req, res) => {
-                //     Restroom.find({}, error, allRestrooms) => {
-                //         if (error) {
-                //             return error;
-                //         } else {
-                //             res.render('pages/admin', {
-                //                 name: siteData.userName,
-                //                 copyrightYear: siteData.year,
-                //                 restroomArray: allRestrooms
-                //             });
-                //         }
-                //     }
-                // }
-                // admin: (req, res) => {
-                //     if (req.isAuthenticated()) {
-                //         res.render('pages/admin', {
-                //             name: siteData.userName,
-                //             copyrightYear: siteData.year,
-                //             signedIn: siteData.signedIn
-                //         });
-                //     } else {
-                //         response.redirect('/login')
-                //     }
-                // },
-                // unapproved_restrooms: (req, res) => {
-                //     if (req.isAuthenticated()) {
-                //         Restroom.find({}, (error, allRestrooms) => {
-                //             if (error) {
-                //                 return error;
-                //             } else {
-                //                 res.render('pages/admin', {
-                //                     copyrightYear: siteData.year,
-                //                     restroomArray: allRestrooms
-                //                 });
-                //             }
-  
-                //         })
-                //     } else {
-                //         res.redirect('/')
-                // can i get this to redirect to the login modal?
-                // }
+
             }
         })
     },
-    create_restroom: (req, res) => {
-        const { username, email, rating, headline, allGender, singleStall, wheelchairAccessibleStall, openToNonCustomers, toilet, urinal, multipleStalls, womensRoom, mensRoom, changingTable, menstrualProducts, automaticDoorOpener, restroomAttendant, floorToCeilingStallWalls, familyRestroom, noAccessKeyRequired, accessibleBagHooksInStall, commentText, img } = req.body;
-        const newRestroom = new Restroom({
-            username: username,
-            email: email,
-            rating: rating,
-            headline: headline,
-            commentText: commentText,
-            img: img
+    approve_restroom: (req, res) => {
+        const { _id } = req.params;
+        const { name, email, rating, headline, restroomAttributes, commentText, img, isApproved } = req.body;
+        Restroom.findByIdAndUpdate(_id, {
+            $set: {
+                name: name,
+                email: email,
+                rating: rating,
+                headline: headline,
+                restroomAttributes: restroomAttributes,
+                commentText: commentText,
+                img: img,
+                isApproved: true
+            }
+        }, { new: true }, error => {
+            if (error) {
+                return error;
+            } else {
+                res.redirect('/admin');
+            }
         });
-        newRestroom.save();
-        res.redirect("/admin");
     },
     restroom_delete: (req, res) => {
         const { _id } = req.params;

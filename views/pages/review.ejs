@@ -5,29 +5,24 @@
 <!-- review section starts  -->
 
     <main id="review-page">
-        <!-- add horizontal rule -->
         <div class="review-form">
             <h1>We Value Your Voice</h1>
             <p id="form-page-par">Your reviews help other users gain valuable information<br> and can make a world of difference when locating a restroom</p>
+            <hr>
             <div class="review-form-area">
-                <h2>Create review</h2>
-                <div id="restroom-img-placeholder">
-                    <!-- <img> use ejs to populate restroom image -->
-                </div>
-
-                <hr class="survey-hr">
 
                 <form id="review-form" action="/review" method="POST">
-                    <h2>Your name</h2>
-                    <p>This name will be visible to other users</p>
-                    <label for="username">Full name</label><br>
-                    <input type="text" id="username" name="username" autofocus="username" required="username"><br>
-                    <label for="email">Email</label><br> 
-                    <input type="text" id="email" name="email" autofocus="email" required="email"><br>
+                    <h2>Create review</h2>
+                    <h3>Your name</h3>
+                    <p>This name will be visible to other users</p><br>
+                    <label for="username">Full name</label><br><br>
+                    <input type="text" id="username" name="username" autofocus="username" required="username" size="40"><br><br>
+                    <label for="email">Email</label><br> <br>
+                    <input type="text" id="email" name="email" autofocus="email" required="email" size="40"><br>
 
-                    <hr class="survey-hr">
+                    <hr class="survey-hr"><br><br>
 
-                    <label>Overall experience</label><br>
+                    <h3>Overall experience</h3><br>
 
                     <span class="star-rating">
                         <input type="radio" name="rating" value=1><i></i>
@@ -35,12 +30,12 @@
                         <input type="radio" name="rating" value=3><i></i>
                         <input type="radio" name="rating" value=4><i></i>
                         <input type="radio" name="rating" value=5><i></i>
-                    </span>
+                    </span><br><br>
                     <div class="clear"></div>
                     
-                    <label for="headline">Add a headline</label><br>
-                    <input type="text" id="headline" name="headline" autofocus="headline" required="headline"><br>
-
+                    <label for="headline">Add a headline</label><br><br>
+                    <input type="text" id="headline" name="headline" autofocus="headline" required="headline" size="50"><br><br><br>
+                    <h3>Features</h3><br><br>
                     <input type="checkbox" id="all-gender" name="restroomAttributes" value="All gender">
                     <label for="all-gender">All gender</label><br>
 
@@ -91,13 +86,12 @@
                     <label for="no-access-key-required">No access key required</label><br>
 
                     <input type="checkbox" id="accessible-bag-hooks-in-stall" name="restroomAttributes" value="Accessible bag hooks in stalls">
-                    <label for="accessible-bag-hooks-in-stall">Accessible bag hooks in stalls</label><br>
+                    <label for="accessible-bag-hooks-in-stall">Accessible bag hooks in stalls</label><br><br>
 
                     <label for="m_3189847521540640526commentText">Add a written review</label><br /><br />
-                    <textarea cols="75" name="commentText" rows="5" style="100%"></textarea><br>
-                    <br>
+                    <textarea cols="75" name="commentText" rows="10" style="100%"></textarea><br>
                     <div class="clear"></div>
-                    <hr class="survey-hr">
+                    <hr class="survey-hr"><br><br>
                     <div class="image-upload">
                         <label for="img">Add a photo or video<br><img src="/Images/add-image-icon.png" id="add-img-btn"></label><br>
                         <input type="file" id="img" name="img" accept="image/*">

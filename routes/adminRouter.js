@@ -4,10 +4,10 @@ const adminController = require('../controllers/adminController');
 
 router.route('/')
     .get(adminController.admin)
-    .post(adminController.create_restroom)
     
 router.route('/:_id')
     .delete(adminController.restroom_delete)
+    .put(adminController.approve_restroom)
 
 
 module.exports = router;

@@ -13,7 +13,7 @@
             <img src="/Images/pexels-cottonbro-4114710.jpg" alt="User profile photo">
             <div class="admin-profile-user-name">
                 <h2>
-                    <%= signedIn ? name : '' %>
+                    <%= signedIn ? name : 'User' %>
                 </h2><img src="/Images/verified_icon.png" alt="Verified icon">
             </div>
             <hr>
@@ -23,52 +23,61 @@
                 <p><span class="bold-type">Location: </span> Boston, MA</p>
             </div>
         </div>
-        <div class="admin-main-container-2">
-            <div class="admin-headers">
-                <h4>REVIEWS</h4>
-                <h3 id="approval-header">Awaiting Approval</h3>
-                <hr>
-                <div class="restroom-cards">
-                    <% for (restroom of restroomArray) { %>
-                        <a href="/admin/<%= restroom._id %>" class="card">
-                            <div class="">
-                                <div id="reviewer-name-email">
-                                    <h5 id="reviewer-name">
-                                        User: <%= restroom.username %>
-                                    </h5>
-                                    <p class="email">
-                                        <%= restroom.email %>
+        <div class="reviews-container">
+            <div id="admin-review-heading-styling">
+                <h3>User Reviews</h3><br>
+            </div>
+            <div class="admin-main-container-2">
+                
+                <div class="admin-headers">
+                    
+                    <h3 id="approval-header">Awaiting Approval</h3>
+                    <hr>
+                    <div class="restroom-cards">
+                        <% for (restroom of restroomArray) { %>
+                            <a href="/admin/<%= restroom._id %>" class="card">
+                                <div>
+                                    <div id="reviewer-name-email">
+                                        <h5 id="reviewer-name">
+                                            User: <%= restroom.username %>
+                                        </h5>
+                                        <p class="email">
+                                            <%= restroom.email %>
+                                        </p>
+                                    </div>
+                                    <p class="rating">
+                                        Rating: <%= restroom.rating %> out of 5
                                     </p>
+                                    <p class="restroom-attributes">
+                                        <%= restroom.restroomAttributes %>
+                                    </p>
+                                    <p class="headline">
+                                        <%= restroom.headline %>
+                                    </p><br>
+                                    <p class="written-review">
+                                        <%= restroom.commentText %>
+                                    </p><br>
+                                    <img src="<%= restroom.img %>" alt="">
                                 </div>
-                                <p class="rating">
-                                    Rating: <%= restroom.rating %> out of 5
-                                </p>
-                                <p class="headline">
-                                    <%= restroom.headline %>
-                                </p><br>
-                                <p class="written-review">
-                                    <%= restroom.commentText %>
-                                </p><br>
-                                <img src="<%= restroom.img %>" alt="">
-                            </div>
-                            <div class="admin-review-btns">
-                                <button>Approve</button>
-                                <button>Archive</button>
-                                <form action="/admin/<%= restroom._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </div>
-                        </a>
+                                <div class="admin-review-btns">
+                                    <form action="/admin/<%= restroom._id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+                                        <button type="submit">Approve</button>
+                                    </form>
+                                    <form action="/admin/<%= restroom._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </div>
+                            </a>
+                    </div>
+                    <% } %>
                 </div>
-                <% } %>
+                <!-- <div <div class="admin-headers">
+                    <h3>All Reviews</h3>
+                </div>
+                
+                <hr> -->
             </div>
-            <!-- <div <div class="admin-headers">
-                <h3>All Reviews</h3>
-            </div>
-            
-            <hr> -->
         </div>
-        
     </div>
 
 </section

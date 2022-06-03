@@ -4,5 +4,6 @@ const resultsController = require('../controllers/resultsController');
 
 router.route('/')
     .get(resultsController.results)
+    // .get(resultsController.approved_restrooms)
 
 module.exports = router;

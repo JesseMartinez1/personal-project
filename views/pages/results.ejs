@@ -34,8 +34,6 @@
                 <li><a href="#about" class="navbtns">About Us</a></li>
                 <li><a href="#contact" class="navbtns">Contact Us</a></li>
                 <li><a href="#submit-a-restroom" class="button">Submit a Restroom</a></li>
-                <!-- <div class="popup" onclick="popupWindow()">Sign In<span class="popuptext" id="myPopup>"></span> -->
-                <!-- <li><a href="signin-popup" class="navbtns" class="popup" onclick="popupWindow()">Sign In</a></li> -->
                 <i class="gg-profile"></i>
             </ul>
         </nav>
@@ -72,31 +70,32 @@
                 });
             </script>
             <!-- ---map--- -->
-            <div class="result-cards">
-                <div class="card-list">
-                    <div class="card">
-                        <div class="img-placeholder"></div><!--image slideshow-->
-                        <div class="card-details">
-                            <h3>Location</h3>
-                            <p>really brief restroom description would go here? some more text as a placeholder</p>
-                            <p>0.0mi away</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-list">
-                    <div class="card">
-                        <div class="img-placeholder"></div>
-                        <!--image slideshow-->
-                        <div class="card-details">
-                            <h3>Location</h3>
-                            <p>really brief restroom description would go here? some more text as a placeholder</p>
-                            <p>0.0mi away</p>
+            <div class="results-container">
+            
+                        <div class="result-card">
+                            <div class="img-placeholder"></div>
+                            <!--image slideshow-->
+                            <div class="card-details">
+                                <h3>
+                                    <%= restroom.rating %>
+                                </h3>
+                                <h3>
+                                    <%= restroom.headline %>
+                                </h3>
+                                <p>
+                                    <%= restroom.restroomAttributes %>
+                                </p>
+                                <p>
+                                    <%= restroom.commentText %>
+                                </p>
+                                <p>0.5mi away</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+    </div>
     </main>
 
 <%- include('../partials/footer') -%>

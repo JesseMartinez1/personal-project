@@ -89,6 +89,11 @@ ul {
     margin-left: 20px;
 }
 
+#show-login {
+    border: none;
+    background-color: transparent;
+}
+
 /* ------ white navbar ------- */
 
 
@@ -142,7 +147,6 @@ ul {
     border-radius: 15px;
     cursor: pointer;
     font-size: 30px;
-    
 } 
 
 .popup form h2 {
@@ -196,11 +200,15 @@ ul {
     text-decoration: none;
     font-weight: 600;
 } 
-
+.popup .form .form-element p {
+    font-size: 1rem;
+    text-align: center;
+}
 /* ------ INDEX: MAIN: SEARCH SECTION ------ */
 
 .home-container-main {
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
+    background-image: url(/Images/mesh-gradient.png);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -258,7 +266,6 @@ p {
 
 .additional-info h1 {
     font-weight: 300;
-    /* font-size: larger; */
     color: var(--black);
 }
 
@@ -292,12 +299,12 @@ p {
 
 .home-container h1 {
     font-weight: 300;
-    /* font-size: larger; */
     color: var(--black);
 }
 
 .home-container p {
     font-size: 1.5rem;
+    width: 400px;
 }
 
 #about-container {
@@ -312,7 +319,8 @@ p {
 }
 
 #about-container #about-opening-text {
-    width: 100%;
+    width: 1050px;
+    margin: auto;
 }
 
 #stats-container {
@@ -341,6 +349,8 @@ p {
 
 #citation p {
     font-size: 1rem;
+    margin: auto;
+    width: 100%
 }
 
 /* ---------- Index: Contact Section ---------- */
@@ -399,16 +409,13 @@ textarea {
 }
 
 .contact-section #contact-container-right form button {
-    width: 150px;
-    height: 60px;
+width: 100px;
+    height: 50px;
     background-color: var(--blue);
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
     color: var(--white);
-    padding: 15px 32px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     cursor: pointer;
 }
@@ -416,13 +423,18 @@ textarea {
 /* ---------- Index: Leave Review Section ---------- */
 
 .review-card {
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
+    background-image: url(/Images/mesh-gradient\ \(2\).png);
     padding: 60px;
     border-radius: 20px;
     margin: 50px;
     color: var(--white);
     font-size: 3rem;
     margin-bottom: 100px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .review-card button {
@@ -438,20 +450,21 @@ textarea {
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 30px;
 }
 
-.button:hover  {
-  background-color: var(--blue);
+.review-card button:hover  {
+  background-color: var(--lightgrey);
   border: 3px solid var(--white);
   border-radius: 50px;
-  color: var(--white);
+  color: var(--blue);
   padding: 12px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 /* FOOTER */
@@ -555,7 +568,7 @@ footer a {
     margin-right: 10px;
 }
 
-/* --------------- Map Page --------------- */
+/* ------------ Map/Results Page ----------- */
 .hl-1 {
     border-bottom: 1px solid var(--darkgrey);
     margin: 0px 0px 20px 0px;
@@ -611,33 +624,45 @@ footer a {
     display: flex;    
 }
 
-.map-placeholder {
-    background-color: var(--blue);
-    padding: 60px;
-    width: 70%;
-    height: 800px;
-    border-radius: 0px;
-    margin: 0px 0px 0px 0px;
+#map {
+    width: 50vw;
+}
+
+.results-container {
+    width: 50vw;
+    background-color: var(--white);
+    overflow: scroll;
+    background-color: var(--lightgrey);
 }
 
 .img-placeholder {
     background-color: var(--blue);
-    padding: 60px;
-    width: 450px;
+    width: 350px;
     height: 200px;
     border-radius: 10px;
-    margin: 40px 20px 20px 20px;
+    margin-bottom: 25px;
 }
 
-.card {
-    display: flex;
-    width: 100%;
-    margin-right: 90px;
-}
-
-.card-details {
-    margin: 40px 0px;
+.result-card {
     color: var(--black);
+    width: 400px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid var(--lightgrey);
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color: var(--black);
+    background-color: var(--white);
+    padding: 25px;
+}
+
+.card-details p {
+    font-size: 1rem;
+    line-height: normal;
+    margin-top: 20px;
 }
 
 /* --------------- 404 Page --------------- */
@@ -682,13 +707,23 @@ footer a {
 
 
 
-/* -------- review form */
+/* -------- Review Form -------- */
+
+#review-page {
+    padding: 50px;
+}
 .review-form h1 {
     font-weight: 300;
     /* font-size: larger; */
     color: var(--black);
     text-align: center;
 }
+
+.review-form hr {
+    margin-top: 50px;
+    border: .5px solid #ddd;
+}
+
 #form-page-par {
     font-size: larger;
     color: var(--black);
@@ -696,35 +731,52 @@ footer a {
 } 
 
 .review-form-area {
+    width: 700px;
+    padding: 50px 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: var(--white);
+    position: relative;
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    border-top: 2px solid var(--lightgrey);    
+    border-left: 2px solid var(--lightgrey);
 }
 
-.feedback {
+.review-form-area h2 {
+    margin-bottom: 20px;
+}
+
+#review-form p {
+    font-size: 1rem;
+}
+
+/* .feedback {
     width: 100%;
     max-width: 780px;
     background: #fff;
     margin: 0 auto;
     padding: 15px;
     box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .survey-hr {
     margin: 10px 0;
     border: .5px solid #ddd;
 }
 
-.feedback form input,
+/* .feedback form input,
 .feedback form textarea {
     width: 100%;
     border: 1px solid #ddd;
-}
+} */
 
 .star-rating {
-    margin: 25px 0 0px;
+    margin-bottom: 20px;
     font-size: 0;
     white-space: nowrap;
     display: inline-block;
@@ -815,7 +867,6 @@ span.scale-rating label {
     -webkit-appearance: none;
     outline: 0 !important;
     height: 33px;
-
     margin: 0 5px 0 0;
     width: calc(10% - 7px);
     float: left;
@@ -829,9 +880,7 @@ span.scale-rating input[type=radio] {
     outline: 0 !important;
     /*border-right: 1px solid grey;*/
     height: 33px;
-
     margin: 0 5px 0 0;
-
     width: 100%;
     float: left;
     cursor: pointer;
@@ -870,6 +919,10 @@ span.scale-rating label:before {
     margin-bottom: 10px;
 }
 
+.image-upload>input {
+    display: none;
+}
+
 #review-form input[type=submit] {
     width: 100px;
     height: 50px;
@@ -882,21 +935,6 @@ span.scale-rating label:before {
     cursor: pointer;
 }
 
-#review-page {
-    padding: 50px;
-}
-
-
-.image-upload>input {
-    display: none;
-}
-
-
-/* ------- */
-#review-form input[type=checkbox] {
-    border: 5px solid red;
-}
-
 /* ------- Admin Page -------- */
 #approval-header {
     margin: 50px 0px 20px 70px;
@@ -905,11 +943,11 @@ span.scale-rating label:before {
     font-size: 1.5rem;
 }
 
-.admin-headers h4 {
+.reviews-container h3 {
     width: fit-content;
-    margin: 50px 0px 0px 70px;
     font-weight: 400;
 }
+
 
 .admin-content-layout hr {
     margin: 0px 70px ;
@@ -917,7 +955,7 @@ span.scale-rating label:before {
 }
 
 .card {
-    width: 920px;
+    width: 900px;
     margin: 50px 70px 50px 70px;
     box-shadow:
         0 5px 10px rgba(154, 160, 185, 0.05),
@@ -929,6 +967,8 @@ span.scale-rating label:before {
     text-decoration: none;
     color: var(--black);
     background-color: var(--white);
+    border: 2px solid var(--lightgrey);
+    overflow-wrap: break-word;  
 }
 
 .card button {
@@ -943,13 +983,15 @@ span.scale-rating label:before {
 
 .card button:hover {
     width: 100px;
-    background-color: var(--lightgrey);
-    color: var(--black);
-    border: 2px solid var(--darkgrey);
+    background-color: var(--blue);
+    color: var(--white);
+    border: 2px solid var(--blue);
     border-radius: 5px;
     padding: 10px;
     margin-right: 10px;
 }
+
+
 
 #reviewer-name-email {
     margin-bottom: 10px;
@@ -960,6 +1002,10 @@ span.scale-rating label:before {
 }
 .rating {
     font-size: 1rem;
+}
+
+.restroom-attributes {
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
@@ -969,9 +1015,10 @@ span.scale-rating label:before {
 }
 
 #welcome {
-    margin: 50px 0px 10px 75px;
+    margin: 50px 0px 50px 75px;
     font-weight: 400;
     width: fit-content;
+    font-size: 2rem;
 }
 
 .admin-content-layout {
@@ -979,7 +1026,7 @@ span.scale-rating label:before {
 }
 
 .admin-main-container-1 {
-    width: 25%;
+    width: 600px;
     height: fit-content;
     box-shadow:
         0 5px 10px rgba(154, 160, 185, 0.05),
@@ -991,18 +1038,22 @@ span.scale-rating label:before {
     flex-direction: column;
     align-items: center;
     position: relative;
+    border: 2px solid var(--lightgrey);
 }
 
 .bold-type {
     font-weight: bold;
 }
+#review-form input[type="checkbox"] {
+    margin-bottom: 15px;
+}
 
 .admin-profile-tag h3 {
-    width: 100%;
+    width: 100px;
     height: 40px;
     background-color: var(--blue);
     color: var(--white);
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 0px 5px 0px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -1031,7 +1082,7 @@ span.scale-rating label:before {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -1053,74 +1104,35 @@ span.scale-rating label:before {
     box-shadow:
         0 5px 10px rgba(154, 160, 185, 0.05),
         0 15px 40px rgba(166, 173, 201, 0.2);
-    width: 75%;
+    width: 1050px;
     height: 700px;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     margin-right: 70px;
     margin-bottom: 100px;
     overflow: scroll;
-    background-color: var(--lightblue);
+    background-color: var(--white);
+    border: 2px solid var(--lightgrey);
 }
 
 .admin-review-btns{
     display: flex;
 }
 
-/* ----- user profile page  ----- */
-.profile-page-content{
-    display: flex;
-}
-
-.profile-page h3 {
-    margin: 50px 0px 50px 75px;
-    font-weight: 400;
-    width: fit-content;
-}
-
-.profile-main-container-1 {
-    width: 25%;
-    height: fit-content;
-    box-shadow:
-        0 5px 10px rgba(154, 160, 185, 0.05),
-        0 15px 40px rgba(166, 173, 201, 0.2);
-    padding: 50px;
-    margin: 0px 20px 100px 70px;
-    border-radius: 20px;
-}
-
-.profile-main-container-1 img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
-
-.profile-page-user-name h2 {
-
-}
-
-.profile-page-user-name img {
-    width: 15px;
-    height: 15px;
-}
-
-.profile-page-content hr {
-    width: 200px;
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid var(--darkgrey);
-    margin: 1em 0;
-    padding: 0;
-}
-
-.profile-main-container-2 {
-    box-shadow:
-        0 5px 10px rgba(154, 160, 185, 0.05),
-        0 15px 40px rgba(166, 173, 201, 0.2);
-    width: 75%;
-    height: 700px;
-    border-radius: 20px;
+#admin-review-heading-styling {
+    height: 50px;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 0px;
     margin-right: 70px;
-    margin-bottom: 100px;
+    box-shadow:
+        0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(166, 173, 201, 0.2);
+    background-color: var(--lightblue);
+    color: var(--black);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
 }
 
+#admin-review-heading-styling h3 {
+    margin: 70px;
+}
