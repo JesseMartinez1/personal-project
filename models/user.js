@@ -6,7 +6,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const userSchema = new Schema({
     username: {
         type: String,
-        required: [true, 'Please enter your name.'],
+        // required: [true, 'Please enter your name.'],
         minlength: [2, 'Minimum length for your name is 2 characters.']
     },
     email: {
@@ -16,7 +16,7 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: [true, 'Please enter your password.'],
-        minlength: [8, 'Minimum length for your password is 8 characters.']
+        // minlength: [8, 'Minimum length for your password is 8 characters.']
     },
     isAdmin: {
         type: Boolean

@@ -1,21 +1,25 @@
-<!-- header section starts  -->
-<header>
-    <a href="/" class="logo"><img src="/Images/gg_logo_white.png"></a>
-
-    <nav>
+<header class="whitenavbar">
+    <a href="/" class="logo"><img src="/Images/gg-logo.png"></a>
+    <form class="location-search-whitenavbar" action="#">
+        <input type="text" id="location-whitenavbar" name="location" placeholder="Enter an address, neighborhood, city, or zip code">
+    </form>
+    <nav class="whitenavbar">
         <ul>
-            <li><a href="#about-container" class="navbtns">About Us</a></li>
-            <li><a href="#contact-container" class="navbtns">Contact Us</a></li>
-            <li><a href="/review" class="button">Submit a Restroom</a></li>
+            <li><a href="#about-container" class="navbtns-whitenavbar">About Us</a></li>
+            <li><a href="#contact-container" class="navbtns-whitenavbar">Contact Us</a></li>
+            <li><a href="/review" class="button" id="submit-btn-whitenavbar">Submit a Restroom</a></li>
             <div class="center">
-                <button id="show-login"><i class="fa-solid fa-circle-user"></i></button>    
+                <button id="show-login-whitenavbar"><i class="fa-solid fa-circle-user"></i></button>
             </div>
-            
             <div class="popup">
                 <div class="close-btn">&times;</div>
                 <div class="form">
                     <form id="login-form" action="/login" method="POST">
-                        <h2>Sign In</h2>
+                        <h2>Sign Up</h2>
+                        <div class="form-element">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Enter your name">
+                        </div>
                         <div class="form-element">
                             <label for="email">Email</label>
                             <input type="text" id="email" name="email" placeholder="Enter email">
@@ -29,19 +33,21 @@
                             <label for="remember-me">Remember me</label>
                         </div>
                         <div class="form-element">
-                            <input type="submit" value="Sign in">
+                            <!-- <button>Sign in</button> -->
+                            <input type="submit" value="Sign In">
                         </div>
                         <div class="form-element">
                             <a href="#">Forgot password?</a>
                         </div>
-                        <!-- <div class="form-element">
-                            <p>Already have an account?<a  href="#">Sign In</a></p>
-                        </div> -->
+                        <div class="form-element">
+                            <p>Already have an account?<a href="#">Sign In</a></p>
+                        </div>
                     </form>
                 </div>
             </div>
         </ul>
-        
     </nav>
 </header>
+<hr id="hr-whitenavbar">
+
 <!-- header section ends -->

@@ -1,50 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <link href='https://css.gg/profile.css' rel='stylesheet'>
-    <script defer src="./scripts.js"></script>
-    <script src="https://kit.fontawesome.com/32a40a29e2.js" crossorigin="anonymous"></script>
+<%- include('../partials/head') -%>
 
-    <!-- ---maps--- -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css"
-        type="text/css">
-    <style>
-        .map {
-            height: 800px;
-            width: 100%;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
-    <!-- ---maps--- -->
-
-
-    <title id="search-results-go-here"></title>
-</head>
-<body>
-    <header>
-        <a href="index.html" class="logo"><img src="Images/gg-logo.png"></a>
-    
-        <nav>
-            <ul>
-                <!-- REMEMBER TO LINK PAGES! -->
-                <li><a href="#about" class="navbtns">About Us</a></li>
-                <li><a href="#contact" class="navbtns">Contact Us</a></li>
-                <li><a href="#submit-a-restroom" class="button">Submit a Restroom</a></li>
-                <i class="gg-profile"></i>
-            </ul>
-        </nav>
-    </header>
+<%- include('../partials/whitenavbar-map') -%>
     <main>
         <div class="hl-1"></div>
         <div id="search-options">
             <input id="secondary-search-input" type="text" placeholder="Enter an address, neighborhood, city, or ZIP code" name="search">  
             <div class="vl"></div>
-            <div class="filters-and-save">
-                <button class="filter-btn" type="submit">All Gender</button>
+            <div class="filters-btns">
+                <button class="filter-btn" onclick="filterSelection('all-gender')">All Gender</button>
                 <button class="filter-btn" type="submit">Single Stall</button>
                 <button class="filter-btn" type="submit">Wheelchair Accessible</button> 
                 <button class="filter-btn" type="submit">Changing Table</button>
@@ -71,26 +34,28 @@
             </script>
             <!-- ---map--- -->
             <div class="results-container">
-            
-                        <div class="result-card">
-                            <div class="img-placeholder"></div>
-                            <!--image slideshow-->
-                            <div class="card-details">
-                                <h3>
-                                    <%= restroom.rating %>
-                                </h3>
-                                <h3>
-                                    <%= restroom.headline %>
-                                </h3>
-                                <p>
-                                    <%= restroom.restroomAttributes %>
-                                </p>
-                                <p>
-                                    <%= restroom.commentText %>
-                                </p>
-                                <p>0.5mi away</p>
-                            </div>
-                        </div>
+            <% for (restroom of restroomsArray) { %>
+                <div class="result-card">
+                    <div class="img-placeholder"></div>
+                    <!--image slideshow-->
+                    <div class="card-details">
+                        <!-- <h3>
+                            <%= restroom.rating %>
+                        </h3> -->
+                        <h3>
+                            <%= restroom.headline %>
+                        </h3>
+                        <p>
+                            <%= restroom.restroomAttributes %>
+                        </p>
+                        <p>
+                            <%= restroom.commentText %>
+                        </p>
+                        <p>0.5mi away</p>
+                    </div>
+                </div>
+            <% } %>
+                        
                     </div>
                 </div>
             </div>

@@ -32,6 +32,7 @@ module.exports = {
         });
     },
     login_post: (req, res) => {
+        console.log(req.body.email);
         const { email, password } = req.body;
         User.findOne({ email: email }, (error, foundUser) => {
             if (error) {

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link href='https://css.gg/profile.css' rel='stylesheet'>
+    <script defer src="./scripts.js"></script>
+    <script src="https://kit.fontawesome.com/32a40a29e2.js" crossorigin="anonymous"></script>
+
+    <!-- ---maps--- -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+    <style>
+        .map {
+            height: 800px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+    <!-- ---maps--- -->
+
+
+    <title id="search-results-go-here"></title>
+<header class="whitenavbar">
+    <a href="/" class="logo"><img src="/Images/gg-logo.png"></a>
+    <form class="location-search-whitenavbar" action="#">
+        <input type="text" id="location-whitenavbar" name="location"
+            placeholder="Enter an address, neighborhood, city, or zip code">
+    </form>
+    <nav class="whitenavbar">
+        <ul>
+            <li><a href="#about-container" class="navbtns-whitenavbar">About Us</a></li>
+            <li><a href="#contact-container" class="navbtns-whitenavbar">Contact Us</a></li>
+            <li><a href="/review" class="button" id="submit-btn-whitenavbar">Submit a Restroom</a></li>
+            <div class="center">
+                <button id="show-login-whitenavbar"><i class="fa-solid fa-circle-user"></i></button>
+            </div>
+            <div class="popup">
+                <div class="close-btn">&times;</div>
+                <div class="form">
+                    <form id="login-form" action="/login" method="POST">
+                        <h2>Sign Up</h2>
+                        <div class="form-element">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-element">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-element">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter password">
+                        </div>
+                        <div class="form-element">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <div class="form-element">
+                            <!-- <button>Sign in</button> -->
+                            <input type="submit" value="Sign In">
+                        </div>
+                        <div class="form-element">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                        <div class="form-element">
+                            <p>Already have an account?<a href="#">Sign In</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</header>
+<hr id="hr-whitenavbar">
+
+<!-- header section ends -->

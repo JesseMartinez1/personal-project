@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/JesseMartinez1/personal-project#readme",
   "dependencies": {
+    "cloudinary": "^1.30.0",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "formidable": "^2.0.1",
     "method-override": "^3.0.0",
     "mongo": "^0.1.0",
     "mongod": "^2.0.0",

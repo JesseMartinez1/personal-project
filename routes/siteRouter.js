@@ -12,6 +12,6 @@ router.route('/register')
 
 router.route('/login')
     // .get(siteController.login_get)
-    // .post(siteController.login_post)
+    .post(siteController.login_post)
 
 module.exports = router;
