@@ -17,37 +17,37 @@
                     <button onclick="viewDropdown()" class="dropbtn">See more filters</button>
                     <div id="myDropdown" class="dropdown-content">
                         <div>
-                            <input type="checkbox" value="Multiple stalls"><label>Multiple stalls</label>
+                            <input type="checkbox" value="Multiple stalls"><label> Multiple stalls</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Women's Room"><label>Women's Room</label>
+                            <input type="checkbox" value="Women's Room"><label> Women's Room</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Men's Room"><label>Men's Room</label>
+                            <input type="checkbox" value="Men's Room"><label> Men's Room</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Changing table"><label>Changing table</label>
+                            <input type="checkbox" value="Changing table"><label> Changing table</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Menstrual products"><label>Menstrual products</label>
+                            <input type="checkbox" value="Menstrual products"><label> Menstrual products</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Automatic door opener"><label>Automatic door opener</label>
+                            <input type="checkbox" value="Automatic door opener"><label> Automatic door opener</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Restroom attendant"><label>Restroom attendant</label>
+                            <input type="checkbox" value="Restroom attendant"><label> Restroom attendant</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Floor-to-ceiling stall walls"><label>Floor-to-ceiling stall walls</label>
+                            <input type="checkbox" value="Floor-to-ceiling stall walls"><label> Floor-to-ceiling stall walls</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Family restroom"><label>Family restroom</label>
+                            <input type="checkbox" value="Family restroom"><label> Family restroom</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="No access key required"><label>No access key required</label>
+                            <input type="checkbox" value="No access key required"><label> No access key required</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Accessible bag hooks in stalls"><label>Accessible bag hooks in stalls</label>
+                            <input type="checkbox" value="Accessible bag hooks in stalls"><label> Accessible bag hooks in stalls</label>
                         </div>
                     </div>
                 </div>
@@ -85,6 +85,12 @@
                         <h3>
                             <%= restroom.headline %>
                         </h3>
+                        <p>
+                            <%= restroom.locationName %>
+                        </p>
+                        <p>
+                            <%= restroom.locationAddress %>
+                        </p>
                         <p>
                             <%= restroom.restroomAttributes %>
                         </p>

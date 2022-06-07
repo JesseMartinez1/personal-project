@@ -217,9 +217,13 @@ ul {
 }
 #logout-btn-whitenavbar {
     border: none;
-    background-color: transparent;
-    color: var(--blue)
+    background-color: transparent;  
 }
+
+#logout-btn2 {
+    color: var(--blue);
+}
+
 /* ------ LOGIN MODAL ------ */
 
 .popup {
@@ -917,7 +921,7 @@ footer a {
 }
 
 .results-container {
-    width: 50vw;
+    width: 60vw;
     background-color: var(--white);
     overflow: scroll;
     background-color: var(--lightgrey);
@@ -953,7 +957,7 @@ footer a {
     color: var(--black);
     background-color: var(--white);
     padding: 25px;
-    height: 500px;
+    height: 550px;
 }
 
 .card-details {
