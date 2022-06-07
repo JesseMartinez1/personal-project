@@ -1,7 +1,7 @@
 require('dotenv').config();
 const methodOverride = require('method-override');
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const path = require('path');
 const routes = require('./routes/index');
 const app = express();
@@ -24,7 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(methodOverride('_method'));
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(routes);
 
 require('./config/connection');
