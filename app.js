@@ -7,7 +7,7 @@ const routes = require('./routes/index');
 const app = express();
 const session = require('express-session');
 const passport = require('passport');
-const PORT = 3000;
+const PORT = process.env.PORT||3000;
 
 app.set('view engine', 'ejs');
 
