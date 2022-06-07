@@ -39,7 +39,7 @@ module.exports = {
             if (error) {
                 return error;
             } else {
-                res.redirect('/admin');
+                res.redirect('/results');
             }
         });
     },
