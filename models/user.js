@@ -8,20 +8,15 @@ const findOrCreate = require('mongoose-findorcreate');
 const userSchema = new Schema({
     username: {
         type: String,
-        required: [true, 'Please enter your name.'],
-        minlength: [2, 'Minimum length for your name is 2 characters.']
-    },
-    email: {
-        type: String,
-        required: [true, 'Please enter your email.']
     },
     password: {
         type: String,
-        required: [true, 'Please enter your password.'],
-        // minlength: [8, 'Minimum length for your password is 8 characters.']
     },
     isAdmin: {
         type: Boolean
+    },
+    googleId: {
+        type: String,
     }
 });
 
@@ -43,7 +38,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "http://localhost:3000/auth/google/admin"
 },
     function (accessToken, refreshToken, email, cb) {
         User.findOrCreate({ googleId: email.id }, function (err, user) {

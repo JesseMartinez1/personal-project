@@ -17,15 +17,14 @@ module.exports = {
     //     });
     // },
     register_post: (req, res) => {
-        const { username, email, password } = req.body;
-        console.log(req.body);
-        User.register({ username: username, email:email }, password, (error, user) => {
+        const { username, password } = req.body;
+        User.register({ username: username }, password, (error, user) => {
             if (error) {
                 console.log(error);
-                res.redirect('/');
+                res.redirect('/login');
             } else {
                 passport.authenticate('local')(req, res, () => {
-                    res.redirect('/login');
+                    res.redirect('/');
                 });
             }
         });
@@ -36,9 +35,9 @@ module.exports = {
     //     });
     // },
     login_post: (req, res) => {
-        const { email, password } = req.body;
+        const { username, password } = req.body;
         const user = new User({
-            email: email,
+            username: username,
             password: password
         });
 
@@ -59,13 +58,13 @@ module.exports = {
             res.redirect('/');
         });
     },
-    // google_get: passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }),
-    // google_redirect_get: [
-    //     passport.authenticate('google', { failureRedirect: '/login' }),
-    //     function (req, res) {
-    //         res.redirect('/');
-    //     }
-    // ]
+    google_get: passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }),
+    google_redirect_get: [
+        passport.authenticate('google', { failureRedirect: '/' }),
+        function (req, res) {
+            res.redirect('/admin');
+        }
+    ]
 }
 
 

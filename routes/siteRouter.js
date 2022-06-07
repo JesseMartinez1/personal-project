@@ -13,7 +13,13 @@ router.route('/register')
 router.route('/login')
     // .get(siteController.login_get)
     .post(siteController.login_post)
+    
+router.route('/auth/google')
+    .get(siteController.google_get)
 
+router.route('/auth/google/admin')
+    .get(siteController.google_redirect_get)
+   
 router.route('/logout')
     .get(siteController.logout)
 
