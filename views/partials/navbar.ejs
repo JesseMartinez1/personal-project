@@ -11,7 +11,7 @@
                 <button id="show-login"><i class="fa-solid fa-circle-user"></i></button>    
             </div>
             
-            <div class="popup">
+            <div class="popup" id="signinpop">
                 <div class="close-btn">&times;</div>
                 <div class="form">
                     <form id="login-form" action="/login" method="POST">
@@ -31,21 +31,23 @@
                         <div class="form-element">
                             <input type="submit" value="Sign in">
                         </div>
+                    </form>
                         <div class="form-element">
                             <a href="#">Forgot password?</a>
                         </div>
                         <div class="form-element">
-                            <p>Don't have an account?</p><a href="/register" id="sign-up-info">Sign up.</a>
+                            <p>Don't have an account?</p><a href="/register" id="show-register"onclick="showRegister()">Sign up.</a>
                         </div>
                         <div class="form-element">
                             <button id="google-btn">
                                 <a href="/auth/google" role="button" >Login in with Google</a>
                             </button>
                         </div>
+                    
             </div>
 
-            <div class="popup-register">
-                <div class="close-btn">&times;</div>
+            <div class="popup-register" id="registerpop">
+                <div class="close-btn-2">&times;</div>
                 <form id="register-form" action="/register" method="POST">
                     <h2>Register</h2>
                     <div class="form-element">
@@ -67,13 +69,17 @@
                     <div class="form-element">
                         <p>Already have an account?<a href="/login">Sign In</a></p>
                     </div>
-                
-            </div>
-                        
-                
             </div>
         </ul>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $('.popup').hide();
+            $('#show-login, #show-register').on('click',
+                function(){
+                    $('.popup-register, .popup').toggle()
+                }
+            )
+        </script>
     </nav>
 </header>
 <!-- header section ends -->

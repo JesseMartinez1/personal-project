@@ -11,6 +11,14 @@ const restroomSchema = new Schema({
         type: String,
         required: [true, 'Please enter your email address.']
     },
+    locationName: {
+        type: String,
+        required: [true, 'Please enter a location name.']
+    },
+    locationAddress: {
+        type: String,
+        required: [true, 'Please enter a location address.']
+    },
     rating: {
         type: Number,
         required: [true, 'Please rate enter a rating.'],

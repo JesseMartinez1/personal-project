@@ -35,26 +35,6 @@ module.exports = {
     //         copyrightYear: siteData.year
     //     });
     // },
-    // login_post: (req, res) => {
-    //     const { email, password } = req.body;
-    //     const user = new User({
-    //         email: email,
-    //         password: password
-    //     });
-    //     User.findOne({ email: email }, (error, foundUser) => {
-    //         if (error) {
-    //             console.log(`The error at login is: ${error}`);
-    //         } else {
-    //             passport.authenticate('local')(req, res, () => {
-    //                 res.redirect('/admin')
-    //             });
-    //         };
-    //     });
-    // },
-    // logout: (req, res) => {
-    //     req.logout();
-    //     res.redirect('/login')
-    // }
     login_post: (req, res) => {
         const { email, password } = req.body;
         const user = new User({
@@ -78,12 +58,12 @@ module.exports = {
             if (err) { return next(err); }
             res.redirect('/');
         });
-    }
+    },
     // google_get: passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }),
     // google_redirect_get: [
     //     passport.authenticate('google', { failureRedirect: '/login' }),
-    //     function (request, response) {
-    //         response.redirect('/admin');
+    //     function (req, res) {
+    //         res.redirect('/');
     //     }
     // ]
 }

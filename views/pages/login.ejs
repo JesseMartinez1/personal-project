@@ -1,0 +1,42 @@
+<%- include('../partials/head') -%>
+
+<%- include('../partials/whitenavbar') -%>
+
+<!-- login section starts  -->
+
+<main id="login-page">
+    <div class="login">
+        <div class="login-form">
+            <form id="login-form" action="/login" method="POST">
+                <h2>Sign In</h2>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-element">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <input type="submit" value="Sign in">
+                </div>
+            </form>
+            <div class="form-element">
+                <a href="#">Forgot password?</a>
+            </div>
+            <div class="form-element">
+                <p>Don't have an account?</p><a href="/register">Sign up.</a>
+            </div>
+            <div class="form-element">
+                <button id="google-btn">
+                    <a href="/auth/google" role="button">Login in with Google</a>
+                </button>
+            </div>
+        </div>
+</main>
+
+<%- include('../partials/footer') -%>

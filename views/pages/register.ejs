@@ -1,0 +1,33 @@
+<%- include('../partials/head') -%>
+
+<%- include('../partials/whitenavbar') -%>
+
+<!-- register section starts  -->
+
+<main id="register-page">
+    <div class="register-form">
+        <form id="register-form" action="/register" method="POST">
+            <h2>Register</h2>
+            <div class="form-element">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username">
+            </div>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password" placeholder="Enter password">
+            </div>
+            <div class="form-element">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+        <div class="form-element">
+            <p>Already have an account?<a href="/login">Sign In</a></p>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') -%>

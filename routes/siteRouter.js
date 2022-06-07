@@ -17,4 +17,11 @@ router.route('/login')
 router.route('/logout')
     .get(siteController.logout)
 
+
+router.route('auth/google')
+    // .get(siteController.google_get)
+
+router.route('auth/google/')
+    // .get(siteController.google_redirect_get)
+
 module.exports = router;

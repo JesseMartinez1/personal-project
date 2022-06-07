@@ -21,11 +21,13 @@ module.exports = {
     },
     approve_restroom: (req, res) => {
         const { _id } = req.params;
-        const { name, email, rating, headline, restroomAttributes, commentText, img, isApproved } = req.body;
+        const { name, email, locationName, locationAddress, rating, headline, restroomAttributes, commentText, img, isApproved } = req.body;
         Restroom.findByIdAndUpdate(_id, {
             $set: {
                 name: name,
                 email: email,
+                locationName: locationName,
+                locationAddress: locationAddress,
                 rating: rating,
                 headline: headline,
                 restroomAttributes: restroomAttributes,
