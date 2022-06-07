@@ -1,5 +1,7 @@
+const passport = require('passport')
 const siteData = require("../data/siteData");
 const User = require("../models/user");
+
 
 module.exports = {
     index: (req, res) => {
@@ -9,44 +11,81 @@ module.exports = {
             signedIn: siteData.signedIn
         });
     },
-    register_get: (req, res) => {
-        res.render('pages/register', {
-            copyrightYear: siteData.year
-        });
-    },
+    // register_get: (req, res) => {
+    //     res.render('pages/register', {
+    //         copyrightYear: siteData.year
+    //     });
+    // },
     register_post: (req, res) => {
-        const { username, email, password, isAdmin } = req.body;
-        const newUser = new User({
-            username: username,
-            email: email,
-            password: password,
-            isAdmin: false
-        })
-        newUser.save();
-        res.redirect('pages/admin'); {
-        }
-    },
-    login_get: (req, res) => {
-        res.render('pages/login', {
-            copyrightYear: siteData.year
-        });
-    },
-    login_post: (req, res) => {
-        console.log(req.body.email);
-        const { email, password } = req.body;
-        User.findOne({ email: email }, (error, foundUser) => {
+        const { username, email, password } = req.body;
+        console.log(req.body);
+        User.register({ username: username, email:email }, password, (error, user) => {
             if (error) {
-                console.log(`The error at login is: ${error}`);
+                console.log(error);
+                res.redirect('/');
             } else {
-                if (foundUser) {
-                    console.log(`email was matched: ${foundUser.email}`);
-                    console.log(`their password is matched: ${foundUser.password}`);
-                    if (foundUser.password === password) {
-                        console.log(`user ${foundUser.email} logged in`);
-                        res.redirect('/admin')
-                    };
-                };
-            };
+                passport.authenticate('local')(req, res, () => {
+                    res.redirect('/login');
+                });
+            }
         });
-    }       
+    },
+    // login_get: (req, res) => {
+    //     res.render('/login', {
+    //         copyrightYear: siteData.year
+    //     });
+    // },
+    // login_post: (req, res) => {
+    //     const { email, password } = req.body;
+    //     const user = new User({
+    //         email: email,
+    //         password: password
+    //     });
+    //     User.findOne({ email: email }, (error, foundUser) => {
+    //         if (error) {
+    //             console.log(`The error at login is: ${error}`);
+    //         } else {
+    //             passport.authenticate('local')(req, res, () => {
+    //                 res.redirect('/admin')
+    //             });
+    //         };
+    //     });
+    // },
+    // logout: (req, res) => {
+    //     req.logout();
+    //     res.redirect('/login')
+    // }
+    login_post: (req, res) => {
+        const { email, password } = req.body;
+        const user = new User({
+            email: email,
+            password: password
+        });
+
+        req.login(user, (error) => {
+            if (error) {
+                console.log(error)
+                res.redirect('/login');
+            } else {
+                passport.authenticate('local')(req, res, () => {
+                    res.redirect('/admin');
+                });
+            }
+        });
+    },
+    logout: (req, res) => {
+        req.logout(function (err) {
+            if (err) { return next(err); }
+            res.redirect('/');
+        });
+    }
+    // google_get: passport.authenticate('google', { scope: ['openid', 'profile', 'email'] }),
+    // google_redirect_get: [
+    //     passport.authenticate('google', { failureRedirect: '/login' }),
+    //     function (request, response) {
+    //         response.redirect('/admin');
+    //     }
+    // ]
 }
+
+

@@ -301,6 +301,114 @@ ul {
     font-size: 1rem;
     text-align: center;
 }
+
+#google-btn {
+    background: transparent;
+    border: none;
+}
+/* #sign-up-info {
+    display: flex;
+} */
+/* --------- Register Modal/Popup -------- */
+.popup-register {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px, 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 200ms ease-in-out 0ms;
+    padding: 50px;
+}
+
+.popup-register.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms,
+        transform 200ms ease-in-out 0ms;
+}
+
+.popup-register .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    color: var(--black);
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.popup-register form h2 {
+    text-align: center;
+    color: #222;
+    margin: 10px 0 px 20px;
+    font-size: 25px;
+}
+
+.popup-register .form .form-element {
+    margin: 15px 0px;
+}
+
+.popup-register .form .form-element label {
+    font-size: 14px;
+    color: #222;
+}
+
+.popup-register .form .form-element input[type="text"],
+.popup-register .form .form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup-register .form .form-element input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#register-form input[type=submit] {
+    background-color: var(--black);
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup-register .form .form-element a {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.popup-register .form .form-element p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* #sign-up-info {
+    display: flex;
+} */
 /* ------ INDEX: MAIN: SEARCH SECTION ------ */
 
 .home-container-main {
@@ -1101,8 +1209,6 @@ span.scale-rating label:before {
     margin-right: 10px;
 }
 
-
-
 #reviewer-name-email {
     margin-bottom: 10px;
 }
@@ -1128,7 +1234,7 @@ span.scale-rating label:before {
     margin: 50px 0px 50px 75px;
     font-weight: 400;
     width: fit-content;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .admin-content-layout {
@@ -1136,7 +1242,7 @@ span.scale-rating label:before {
 }
 
 .admin-main-container-1 {
-    width: 600px;
+    width: 350px;
     height: fit-content;
     box-shadow:
         0 5px 10px rgba(154, 160, 185, 0.05),

@@ -34,11 +34,43 @@
                         <div class="form-element">
                             <a href="#">Forgot password?</a>
                         </div>
-                        <!-- <div class="form-element">
-                            <p>Already have an account?<a  href="#">Sign In</a></p>
-                        </div> -->
-                    </form>
-                </div>
+                        <div class="form-element">
+                            <p>Don't have an account?</p><a href="/register" id="sign-up-info">Sign up.</a>
+                        </div>
+                        <div class="form-element">
+                            <button id="google-btn">
+                                <a href="/auth/google" role="button" >Login in with Google</a>
+                            </button>
+                        </div>
+            </div>
+
+            <div class="popup-register">
+                <div class="close-btn">&times;</div>
+                <form id="register-form" action="/register" method="POST">
+                    <h2>Register</h2>
+                    <div class="form-element">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password" placeholder="Enter password">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+                    <div class="form-element">
+                        <p>Already have an account?<a href="/login">Sign In</a></p>
+                    </div>
+                
+            </div>
+                        
+                
             </div>
         </ul>
         

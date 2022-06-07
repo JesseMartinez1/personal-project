@@ -28,7 +28,7 @@ const restroomSchema = new Schema({
     commentText: {
         type: String,
         required: [true, 'Please enter a written review.'],
-        minlength: [50, 'Minimum length for the written review is 50 characters.'],
+        minlength: [10, 'Minimum length for the written review is 10 characters.'],
         maxlength: [4000, 'Maximum length for the written review is 4000 characters.']
     },
     img: {

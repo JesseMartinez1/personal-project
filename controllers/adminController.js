@@ -3,19 +3,21 @@ const Restroom = require("../models/restrooms");
 
 module.exports = {
     admin: (req, res) => {
-        Restroom.find({}, (error, allRestrooms) => {
-            if (error) {
-                return error;
-            } else {
-                res.render('pages/admin', {
-                    name: siteData.userName,
-                    copyrightYear: siteData.year,
-                    signedIn: siteData.signedIn,
-                    restroomArray: allRestrooms
-                });
+        if (req.isAuthenticated()) {
+            Restroom.find({}, (error, allRestrooms) => {
+                if (error) {
+                    return error;
+                } else {
+                    res.render('pages/admin', {
+                        name: siteData.username,
+                        copyrightYear: siteData.year,
+                        signedIn: siteData.signedIn,
+                        restroomArray: allRestrooms
+                    });
 
-            }
-        })
+                }
+            })
+        }
     },
     approve_restroom: (req, res) => {
         const { _id } = req.params;
