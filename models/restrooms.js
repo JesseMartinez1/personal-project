@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const restroomSchema = new Schema({
-    username: {
+    name: {
         type: String,
         required: [true, 'Please enter your full name.'],
         minlength: [1, 'Minimum length for the full name is 1 character.']

@@ -10,11 +10,13 @@ module.exports = {
         });
     },
     create_restroom_post: (req, res) => {
-        const { username, email, rating, headline, restroomAttributes, commentText, img, isApproved } = req.body;
+        const { name, email, locationName, locationAddress, rating, headline, restroomAttributes, commentText, img, isApproved } = req.body;
         console.log(req.body)
         const newRestroom = new Restroom({
-            username: username,
+            name: name,
             email: email,
+            locationName: locationName,
+            locationAddress: locationAddress,
             rating: rating,
             headline: headline,
             restroomAttributes: restroomAttributes,

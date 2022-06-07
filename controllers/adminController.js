@@ -33,7 +33,7 @@ module.exports = {
                 restroomAttributes: restroomAttributes,
                 commentText: commentText,
                 img: img,
-                isApproved: true
+                isApproved: isApproved
             }
         }, { new: true }, error => {
             if (error) {
