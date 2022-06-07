@@ -48,3 +48,11 @@ window.onclick = function (event) {
     }
   }
 } 
+
+// --------
+
+document.getElementById("approve-btn").onclick = function () {
+
+  document.querySelector(".card").style.display = "none";
+
+}

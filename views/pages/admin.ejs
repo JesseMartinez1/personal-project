@@ -60,8 +60,8 @@
                                     <img src="<%= restroom.img %>" alt="">
                                 </div>
                                 <div class="admin-review-btns">
-                                    <form action="/admin/<%= restroom._id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
-                                        <button type="submit">Approve</button>
+                                    <form action="/admin/<%= restroom._id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded" onclick="hideReview()">
+                                        <button id="approve-btn" type="submit">Approve</button>
                                     </form>
                                     <form action="/admin/<%= restroom._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
                                         <button type="submit">Delete</button>

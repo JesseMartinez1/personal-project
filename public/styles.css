@@ -943,6 +943,28 @@ footer a {
     margin-bottom: 25px;
 }
 
+.img-placeholder-2 {
+    background-image: url(/Images/target-pic.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.img-placeholder-3 {
+    background-image: url(/Images/cava-pic.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
 .result-card {
     color: var(--black);
     width: 400px;
@@ -1298,6 +1320,7 @@ span.scale-rating label:before {
     padding: 10px;
     margin-right: 10px;
 }
+
 
 #reviewer-name-email {
     margin-bottom: 10px;
