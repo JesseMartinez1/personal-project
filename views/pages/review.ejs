@@ -16,7 +16,7 @@
                     <h3>Your name</h3>
                     <p>This name will be visible to other users</p><br>
                     <label for="username">Full name</label><br><br>
-                    <input type="text" id="username" name="username" autofocus="username" required size="40"><br><br>
+                    <input type="text" id="username" name="username" autofocus="username" required size="40" minlength="1"><br><br>
                     <label for="email">Email</label><br> <br>
                     <input type="text" id="email" name="email" autofocus="email" required size="40"><br>
 
@@ -34,16 +34,16 @@
                     <h3>Overall experience</h3><br>
 
                     <span class="star-rating">
-                        <input type="radio" name="rating" value=1><i></i>
-                        <input type="radio" name="rating" value=2><i></i>
-                        <input type="radio" name="rating" value=3><i></i>
-                        <input type="radio" name="rating" value=4><i></i>
-                        <input type="radio" name="rating" value=5><i></i>
+                        <input type="radio" name="rating" value="1" required ><i></i>
+                        <input type="radio" name="rating" value="2"><i></i>
+                        <input type="radio" name="rating" value="3"><i></i>
+                        <input type="radio" name="rating" value="4"><i></i>
+                        <input type="radio" name="rating" value="5"><i></i>
                     </span><br><br>
                     <div class="clear"></div>
                     
                     <label for="headline">Add a headline</label><br><br>
-                    <input type="text" id="headline" name="headline" autofocus="headline" required size="50"><br><br><br>
+                    <input type="text" id="headline" name="headline" autofocus="headline" required size="50" minlength="2"><br><br><br>
                     <h3>Features</h3><br><br>
                     <input type="checkbox" id="all-gender" name="restroomAttributes" value="All gender">
                     <label for="all-gender">All gender</label><br>
@@ -98,7 +98,7 @@
                     <label for="accessible-bag-hooks-in-stall">Accessible bag hooks in stalls</label><br><br>
 
                     <label for="m_3189847521540640526commentText">Add a written review</label><br /><br />
-                    <textarea cols="75" name="commentText" rows="10" minlength="10"></textarea><br>
+                    <textarea cols="75" name="commentText" rows="10" required minlength="10" maxlength="4000"></textarea><br>
                     <div class="clear"></div>
                     <hr class="survey-hr"><br><br>
                     <div class="image-upload">

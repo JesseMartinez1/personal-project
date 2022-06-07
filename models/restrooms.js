@@ -21,9 +21,7 @@ const restroomSchema = new Schema({
     },
     rating: {
         type: Number,
-        required: [true, 'Please rate enter a rating.'],
-        min: [1, 'Minimum rating is 1'],
-        max: [5, 'Maximum rating is 5']
+        required: [true, 'Please rate enter a rating.']
     },
     headline: {
         type: String,
