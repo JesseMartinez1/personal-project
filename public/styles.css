@@ -113,6 +113,17 @@ ul {
     background-color: transparent;
 }
 
+#google-btn {
+    border: none;
+    background-color: transparent;
+    margin-left: 40px;
+}
+
+#logout-btn {
+    border: none;
+    background-color: transparent;
+}
+
 /* ------ White Navbar ------- */
 
 #hr-whitenavbar {
@@ -204,7 +215,11 @@ ul {
     border: none;
     background-color: transparent;
 }
-
+#logout-btn-whitenavbar {
+    border: none;
+    background-color: transparent;
+    color: var(--blue)
+}
 /* ------ LOGIN MODAL ------ */
 
 .popup {
